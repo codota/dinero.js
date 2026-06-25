@@ -51,7 +51,7 @@ export function distribute<TAmount>(calculator: DistributeCalculator<TAmount>) {
     const sortedIndices = ratios
       .map((ratio, index) => ({ ratio, index }))
       .filter(({ ratio }) => !equalFn(ratio, zero))
-      .sort((a, b) => (greaterThanFn(a.ratio, b.ratio) ? -1 : 1))
+      .sort((a, b) => (greaterThanFn(a.ratio, b.ratio) ? 1 : -1))
       .map(({ index }) => index);
 
     let i = 0;
